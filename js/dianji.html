@@ -5,19 +5,22 @@
   </head>
   <body>
     <button type="button" id="btn">点击添加一列</button>
-
+  <div id="1"></div>
     <script src="../js/jquery.js"></script>
     <script type="text/javascript">
       $(document).ready(function () {
-        var text = "这一行的序号是";
+       
 
         var i = 0;
         $("#btn").click(function () {
           if ($("#btn").click) {
             i++;
+          
+          $("#1").append("这一列的序号是"+[i]+"</br>")
+           
           }
-
-          console.log(text + i);
+       
+         
         });
       });
     </script>
