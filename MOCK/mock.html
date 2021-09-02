@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script src="../mock.js"></script>
+    <script src="../jquery.js"></script>
+    <script type="text/javascript">
+      //var Mock=require("mockjs");
+      var res = Mock.mock({
+        staus: "success",
+        msg: "查询成功",
+        "data|100": [
+          {
+            "id|+1": 1,
+            name: "@cname",
+            birth: "@date(yyyy)",
+            "sex|1-2": 1,
+            sNo: "@zip",
+            email: /^[1-9]\d{7,10}@qq\.com/,
+            phone: /^1[385][1-9]\d{8}/,
+            address: "@province@city@county",
+
+            ctime: Date.parse(new Date()),
+
+            utime: Date.parse(new Date()),
+            // "ctime":'@DATETIME("yyyy-MM-dd HH:mm:ss")',
+            //"utime":"@utime",
+          },
+        ],
+      });
+      console.log(res);
+    </script>
+  </body>
+</html>
